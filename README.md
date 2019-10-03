@@ -26,8 +26,15 @@ We would like to see the output for an example basket containing the following i
 ## Demonstration 
 
 The program is introduced using java. And the project has been built initially with Maven. 
+
 So first, you need to be sure that maven is already installed and fully configured (with java 8 as java home).
 Second, using command line, execute the following :
 
 `mvn package`
+
+A new folder of maven called target will be generated. To check the tests please follow this folder : surefire-reports, it contains all the results of testing for each junit class created. This result is also shown in the command line previously. You could also execute the following command after executing the previous one: 
+
+`mvn test`
+
+
 
