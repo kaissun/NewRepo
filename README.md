@@ -32,9 +32,14 @@ Second, using command line, execute the following :
 
 `mvn package`
 
-A new folder of maven called target will be generated. To check the tests please follow this folder : surefire-reports, it contains all the results of testing for each junit class created. This result is also shown in the command line previously. You could also execute the following command after executing the previous one: 
+A new folder of maven called target will be generated after this command. To check the tests please follow this folder : surefire-reports, it contains all the results of testing for each junit class created. This result is also shown when executing in the command line previously. You could also execute the following command after executing the previous one: 
 
 `mvn test`
+
+in the same newely created folder, you will find the assembly for our program: SuperMarket1.0-0.0.1-SNAPSHOT.jar
+To run the program, please execute the following the line in the command line:
+
+`java -jar SuperMarket1.0-0.0.1-SNAPSHOT.jar`
 
 
 
