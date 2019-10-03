@@ -1,3 +1,4 @@
+## Problem
 Please write a program to represent the following scenario:
 
 We are a national supermarket chain that is interested in starting to use special offers in our stores. We stock the following products:
@@ -20,4 +21,13 @@ We would like to see the output for an example basket containing the following i
 | Apple  | 4|
 | Orange | 3| 
 | Watermelon| 5| 
+
+
+## Demonstration 
+
+The program is introduced using java. And the project has been built initially with Maven. 
+So first, you need to be sure that maven is already installed and fully configured (with java 8 as java home).
+Second, using command line, execute the following :
+
+`mvn package`
 
