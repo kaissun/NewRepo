@@ -43,12 +43,12 @@ To run the program, and exactly the exemple provided in the problem, please run 
 
 the output will be: 
 
-
+![2019-10-04_115103](https://user-images.githubusercontent.com/1419027/66202293-aabcc100-e6a5-11e9-967e-85cb5af0670e.png)
 
 
 And if you want to test with other example, just you need to provide exactly 3 parameters with number type:
 
 `java -jar SuperMarket1.0-0.0.1-SNAPSHOT.jar 1 2 3`
 
-The order of parameters are standing for: <apple quantity> <orange quantity> <watermelon quantity>
+The order of parameters are standing for: \<apple quantity\> \<orange quantity\> \<watermelon quantity\>
 
