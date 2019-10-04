@@ -25,9 +25,9 @@ We would like to see the output for an example basket containing the following i
 
 ## Demonstration 
 
-The program is introduced using java. And the project has been built initially with Maven. 
+The program is introduced using java 8. And the project has been built initially with Maven. 
 
-So first, you need to be sure that maven is already installed and fully configured (with java 8 as java home).
+So first, you need to be sure that maven is already installed and fully configured (with java 8 as java home). I used as apache-maven-3.6.2 in this project and jdk1.8.0_171 and JDK.
 Second, using command line, execute the following :
 
 `mvn package`
@@ -41,7 +41,7 @@ To run the program, and exactly the exemple provided in the problem, please run 
 
 `java -jar SuperMarket1.0-0.0.1-SNAPSHOT.jar`
 
-the output will be: 
+the output in the line command will be: 
 
 ![2019-10-04_115103](https://user-images.githubusercontent.com/1419027/66202293-aabcc100-e6a5-11e9-967e-85cb5af0670e.png)
 
