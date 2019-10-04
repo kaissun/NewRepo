@@ -7,6 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.supermarket.entity.Item;
 import com.supermarket.entity.Offer;
@@ -32,26 +33,6 @@ public class App {
 		stock.put(Constants.APPLE, new Item(Constants.APPLE, 0.2f, Offer.BOGOF));
 		stock.put(Constants.ORANGE, new Item(Constants.ORANGE, 0.5f, Offer.NONE));
 		stock.put(Constants.WATERMELON, new Item(Constants.WATERMELON, 0.8f, Offer.THREEFORTWO));
-
-		/*
-		 * As per the demand, the cart will contain: 
-		 * - 4 apples 
-		 * - 3 oranges 
-		 * - 5 watermelons
-		 */
-		cart.add(stock.get(Constants.APPLE));
-		cart.add(stock.get(Constants.APPLE));
-		cart.add(stock.get(Constants.APPLE));
-		cart.add(stock.get(Constants.APPLE));
-		cart.add(stock.get(Constants.ORANGE));
-		cart.add(stock.get(Constants.ORANGE));
-		cart.add(stock.get(Constants.ORANGE));
-		cart.add(stock.get(Constants.WATERMELON));
-		cart.add(stock.get(Constants.WATERMELON));
-		cart.add(stock.get(Constants.WATERMELON));
-		cart.add(stock.get(Constants.WATERMELON));
-		cart.add(stock.get(Constants.WATERMELON));
-
 	}
 
 	/**
@@ -106,6 +87,47 @@ public class App {
 	}
   
 	public static void main(String[] args) {
+		switch (args.length) {
+		case 0:
+			/*
+			 * As per the demand, the cart will contain: 
+			 * - 4 apples 
+			 * - 3 oranges 
+			 * - 5 watermelons
+			 */
+			cart.add(stock.get(Constants.APPLE));
+			cart.add(stock.get(Constants.APPLE));
+			cart.add(stock.get(Constants.APPLE));
+			cart.add(stock.get(Constants.APPLE));
+			cart.add(stock.get(Constants.ORANGE));
+			cart.add(stock.get(Constants.ORANGE));
+			cart.add(stock.get(Constants.ORANGE));
+			cart.add(stock.get(Constants.WATERMELON));
+			cart.add(stock.get(Constants.WATERMELON));
+			cart.add(stock.get(Constants.WATERMELON));
+			cart.add(stock.get(Constants.WATERMELON));
+			cart.add(stock.get(Constants.WATERMELON));
+			break;
+		case 3:
+			try {
+				Stream.iterate(0, n -> n + 1).limit(Integer.parseInt(args[0]))
+				.forEach(x -> cart.add(stock.get(Constants.APPLE)));
+				Stream.iterate(0, n -> n + 1).limit(Integer.parseInt(args[1]))
+				.forEach(x -> cart.add(stock.get(Constants.ORANGE)));
+				Stream.iterate(0, n -> n + 1).limit(Integer.parseInt(args[2]))
+				.forEach(x -> cart.add(stock.get(Constants.WATERMELON)));
+			} catch (NumberFormatException e) {
+				System.err.println("INORRECT! The three parameters should be numbers");
+				System.exit(0);
+			}
+			break;
+
+		default:
+			System.err.println("INVALID! you must introduce exactly the 3 following parameters: <apple quantity> <orange quantity> <watermelon quantity>");
+			System.exit(0);
+			break;
+		}
+		
 		Map<String, Long> quantities = checkoutQantities(cart);
 
 		List<Order> orders = generateOrders(quantities);
